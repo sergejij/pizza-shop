@@ -1,6 +1,14 @@
 import React from 'react';
 import logo from './assets/img/pizza-logo.svg';
 
+function Button() {
+  return (
+    <button type="button">
+      Hi
+    </button>
+  );
+}
+
 const Main = () => (
   <div className="wrapper">
     <div className="header">
@@ -8,6 +16,7 @@ const Main = () => (
         <div className="header__logo">
           <img width="38" src={logo} alt="Pizza logo" />
           <div>
+            <Button />
             <h1>React Pizza</h1>
             <p>самая вкусная пицца во вселенной</p>
           </div>
