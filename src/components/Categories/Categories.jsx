@@ -3,6 +3,10 @@ import React from 'react';
 const Categories = ({ items }) => {
     const [activeItem, setActiveItem] = React.useState(null);
 
+    const onSelectItem = (index) => {
+        setActiveItem(index)
+    }
+
     return (
         <div className="categories">
             <ul>
@@ -14,7 +18,7 @@ const Categories = ({ items }) => {
                 </li>
                 {items && items.map((item, index) => (
                     <li
-                        onClick={() => setActiveItem(index)}
+                        onClick={() => onSelectItem(index)}
                         key={`${item}_${index}`}
                         className={activeItem === index ? 'active' : ''}
                     >

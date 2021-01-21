@@ -1,9 +1,17 @@
 import React from 'react';
-import Main from './Main';
+import { Header } from "./components";
+import { Home, Cart } from "./pages";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
-      <Main />
+      <div className="wrapper">
+        <Header />
+        <div className="content">
+          <Route path="/cart" exact component={Cart} />
+          <Route path="/" exact component={Home} />
+        </div>
+      </div>
   );
 }
 
