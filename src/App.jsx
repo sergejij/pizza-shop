@@ -2,17 +2,27 @@ import React from 'react';
 import { Header } from "./components";
 import { Home, Cart } from "./pages";
 import { Route } from "react-router-dom";
+import axios from "axios";
 
 function App() {
-  return (
+    const [pizzas, setPizzas] = React.useState([]);
+
+    React.useEffect(() => {
+        axios.get('http://localhost:3000/db.json')
+            .then(({ data }) => {
+                setPizzas(data.pizzas);
+            });
+    }, []);
+
+    return (
       <div className="wrapper">
         <Header />
         <div className="content">
           <Route path="/cart" exact component={Cart} />
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact render={() => <Home pizzas={pizzas} />} />
         </div>
       </div>
-  );
+    );
 }
 
 export default App;
