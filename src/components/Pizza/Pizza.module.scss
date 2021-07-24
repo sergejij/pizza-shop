@@ -1,0 +1,81 @@
+.pizza {
+  border: 1px solid green;
+  width: 22%;
+  min-width: 250px;
+  height: 400px;
+  text-align: center;
+}
+
+.configurePizza {
+  background: #F3F3F3;
+  border-radius: 10px;
+  padding: 6px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  & > p {
+    flex: 1;
+    padding: 7px 0;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  & .active {
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+  }
+
+
+  .btnOutline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    transition: 0.2s ease-in-out;
+    background: transparent;
+    border: 1px solid #EB5A1E;
+    color: #EB5A1E;
+    font-weight: 600;
+    border-radius: 30px;
+    width: 180px;
+
+    &:hover {
+      border: none;
+      color: #fff;
+      background: #FE5F1E;
+
+      & path {
+        fill: #fff;
+      }
+
+      & > span {
+        background-color: #fff;
+        color: #EB5A1E;
+      }
+    }
+
+    & > span {
+      border-radius: 100px;
+      background-color: #EB5A1E;
+      color: #fff;
+      width: 25px;
+      height: 25px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}
+

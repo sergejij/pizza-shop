@@ -1,30 +1,17 @@
 import React from 'react';
-import { Header } from "./components";
-import { Home, Cart } from "./pages";
-import { Route } from "react-router-dom";
-import axios from "axios";
-import {setPizzas } from "./redux/actions/pizzas";
-import { useDispatch  } from 'react-redux';
+
+import Home from "./pages/Home/Home";
+import Header from "./components/Header/Header";
+
+import './App.scss';
 
 function App() {
-    const dispatch = useDispatch();
-
-    React.useEffect(() => {
-        axios.get('http://localhost:3001/pizzas')
-            .then(({ data }) => {
-                dispatch(setPizzas(data));
-            });
-    }, []);
-
-    return (
-      <div className="wrapper">
-        <Header />
-        <div className="content">
-          <Route path="/cart" exact component={Cart} />
-          <Route path="/" exact component={Home} />
-        </div>
-      </div>
-    );
+  return (
+    <div className="App">
+      <Header isShowButton={true} cartSum={520} cartCount={2} />
+      <Home />
+    </div>
+  );
 }
 
 export default App;

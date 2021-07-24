@@ -1,0 +1,38 @@
+.sort {
+  position: relative;
+  & .sortLabel > p {
+    font-weight: 700;
+    font-size: 0.875rem;
+
+    span {
+      font-weight: 400;
+      color:#FE5F1E;
+      margin-left: 5px;
+      border-bottom: 1px dotted #FE5F1E;
+      cursor: pointer;
+    }
+  }
+
+  & .sortPopup {
+    position: absolute;
+    right: 5%;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 200px;
+
+    & p {
+      padding: 10px 20px 10px 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(254, 95, 30, 0.05);
+        color: #FE5F1E;
+        font-weight: 700;
+      }
+
+    }
+  }
+}
