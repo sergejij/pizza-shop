@@ -1,9 +1,25 @@
 .pizza {
-  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   width: 22%;
-  min-width: 250px;
-  height: 400px;
+  min-width: 280px;
   text-align: center;
+
+  & h3 {
+    margin-top: 0;
+  }
+
+  & img {
+    align-self: flex-end;
+  }
+
+  & .price {
+    text-align: left;
+    font-size: 1.250rem;
+    cursor: default;
+  }
 }
 
 .configurePizza {

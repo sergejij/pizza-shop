@@ -3,14 +3,13 @@ import React from 'react';
 import styles from './Pizzas.module.scss';
 import Pizza from "../Pizza/Pizza";
 
-const Pizzas = ({ headline }) => (
+const Pizzas = ({ headline, pizzas }) => (
   <div className={styles.pizzasWrapper}>
     <h2>{headline}</h2>
      <div className={styles.pizzas}>
-         <Pizza headline="Чизбургер-пицца" price="395" cartCount="2" />
-         <Pizza headline="Чизбургер-пицца" price="395" cartCount="2" />
-         <Pizza headline="Чизбургер-пицца" price="395" cartCount="2" />
-         <Pizza headline="Чизбургер-пицца" price="395" cartCount="2" />
+         {pizzas.length && pizzas.map((pizza) => {
+             return <Pizza {...pizza} />
+         })}
      </div>
   </div>
 );
