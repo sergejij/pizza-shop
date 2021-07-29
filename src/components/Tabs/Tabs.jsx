@@ -12,15 +12,15 @@ const Tabs = () => {
   const [activeIndex, setActiveIndex] = React.useState(0);
 
   return (
-      <div className={styles.tabs}>
-        {tabs.map((tabName, index) => (
-          <Tab
-            onClick={() => setActiveIndex(index)}
-            isActive={activeIndex === index}
-            name={tabName}
-          />
-        ))}
-      </div>
+    <div className={styles.tabs}>
+      {tabs.map((tabName, index) => (
+        <Tab
+          onClick={() => setActiveIndex(index)}
+          isActive={activeIndex === index}
+          name={tabName}
+        />
+      ))}
+    </div>
   );
 };
 

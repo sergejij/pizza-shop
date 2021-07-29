@@ -11,54 +11,54 @@ import Pizza3 from '../../assets/img/pizzas/3.jpg';
 import Pizza4 from '../../assets/img/pizzas/4.jpg';
 
 const pizzas = [
-    {
-        photo: Pizza1,
-        headline: 'Чизбургер-пицца',
-        price: 395,
-        countCart: 2,
-    },
-    {
-        photo: Pizza2,
-        headline: 'Сырная',
-        price: 450,
-        countCart: 2,
-    },
-    {
-        photo: Pizza3,
-        headline: 'Креветки по-азиатски',
-        price: 290,
-        countCart: 2,
-    },
-    {
-        photo: Pizza4,
-        headline: 'Сырный цыпленок',
-        price: 385,
-        countCart: 2,
-    },
-    {
-        photo: Pizza1,
-        headline: 'Чизбургер-пицца',
-        price: 395,
-        countCart: 2,
-    },
-    {
-        photo: Pizza2,
-        headline: 'Сырная',
-        price: 450,
-        countCart: 2,
-    },
-    {
-        photo: Pizza3,
-        headline: 'Креветки по-азиатски',
-        price: 290,
-        countCart: 2,
-    },
-    {
-        photo: Pizza4,
-        headline: 'Сырный цыпленок',
-        price: 385,
-        countCart: 2,
-    },
+  {
+    photo: Pizza1,
+    headline: 'Чизбургер-пицца',
+    price: 395,
+    countCart: 2,
+  },
+  {
+    photo: Pizza2,
+    headline: 'Сырная',
+    price: 450,
+    countCart: 2,
+  },
+  {
+    photo: Pizza3,
+    headline: 'Креветки по-азиатски',
+    price: 290,
+    countCart: 2,
+  },
+  {
+    photo: Pizza4,
+    headline: 'Сырный цыпленок',
+    price: 385,
+    countCart: 2,
+  },
+  {
+    photo: Pizza1,
+    headline: 'Чизбургер-пицца',
+    price: 395,
+    countCart: 2,
+  },
+  {
+    photo: Pizza2,
+    headline: 'Сырная',
+    price: 450,
+    countCart: 2,
+  },
+  {
+    photo: Pizza3,
+    headline: 'Креветки по-азиатски',
+    price: 290,
+    countCart: 2,
+  },
+  {
+    photo: Pizza4,
+    headline: 'Сырный цыпленок',
+    price: 385,
+    countCart: 2,
+  },
 ];
 
 const Home = () => (
