@@ -6,6 +6,10 @@
   padding: 40px 50px;
   border-bottom: 1px solid #F6F6F6;
 
+  @media (max-width: 500px) {
+    padding: 20px;
+  }
+
   & > a {
     color: black;
     text-decoration: none;
@@ -23,13 +27,12 @@
 
     & h1 {
       text-decoration: none;
-      line-height: 0.7rem;
     }
 
     & p {
       font-style: normal;
       font-weight: 400;
-      line-height: 0.7rem;
+      line-height: 1.2rem;
       color: #7B7B7B;
     }
   }
@@ -59,6 +62,11 @@
 
     .headerCartIcon {
       margin-right: 10px;
+    }
+    @media (max-width: 750px) {
+      font-size: 0.9rem;
+      padding: 11px 20px;
+      width: 150px;
     }
   }
 }

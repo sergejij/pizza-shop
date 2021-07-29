@@ -52,6 +52,10 @@
   margin-top: 50px;
   margin-bottom: 50px;
 
+  @media (max-width: 500px) {
+    width: 90%;
+  }
+
   .orangeBtn {
     background-color: #FE5F1E;
     color: #fff;
@@ -107,9 +111,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding-bottom: 15px;
 
   font-size: 1.375rem;
+
+  & > button {
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 750px) {
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .headline, .clearCart {
@@ -119,7 +133,7 @@
   align-items: center;
 
   & > svg {
-    margin-right: 10px;
+    margin-right: 8px;
   }
 
   & > p {
@@ -139,6 +153,7 @@
 .pizzaRow {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
@@ -166,6 +181,14 @@
   & img {
     margin-right: 20px;
   }
+}
+
+.pizzaChoseBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1
 }
 
 .changeCount {
