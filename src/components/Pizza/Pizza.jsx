@@ -12,21 +12,21 @@ const ConfigurePizza = ({
     <div className={styles.row}>
       <p
         onClick={() => setIsTraditional(false)}
-        className={!isTraditional && styles.active}
+        className={!isTraditional ? styles.active : ''}
       >
         тонкое
       </p>
       <p
         onClick={() => setIsTraditional(true)}
-        className={isTraditional && styles.active}
+        className={isTraditional ? styles.active : ''}
       >
         традиционное
       </p>
     </div>
     <div className={styles.row}>
-      <p className={size === 26 && styles.active} onClick={() => setSize(26)}>26 см.</p>
-      <p className={size === 30 && styles.active} onClick={() => setSize(30)}>30 см.</p>
-      <p className={size === 40 && styles.active} onClick={() => setSize(40)}>40 см.</p>
+      <p className={size === 26 ? styles.active : ''} onClick={() => setSize(26)}>26 см.</p>
+      <p className={size === 30 ? styles.active : ''} onClick={() => setSize(30)}>30 см.</p>
+      <p className={size === 40 ? styles.active : ''} onClick={() => setSize(40)}>40 см.</p>
     </div>
   </div>
 );

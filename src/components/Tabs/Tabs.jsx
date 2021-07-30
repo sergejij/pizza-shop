@@ -18,6 +18,7 @@ const Tabs = () => {
           onClick={() => setActiveIndex(index)}
           isActive={activeIndex === index}
           name={tabName}
+          key={index}
         />
       ))}
     </div>
