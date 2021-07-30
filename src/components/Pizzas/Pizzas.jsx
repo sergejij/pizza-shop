@@ -12,7 +12,7 @@ const Pizzas = ({ headline }) => {
     <div className={styles.pizzasWrapper}>
       <h2>{headline}</h2>
       <div className={styles.pizzas}>
-        {pizzas.length && pizzas.map((pizza) => <Pizza key={pizza.id} {...pizza} />)}
+        {pizzas.length && pizzas.map((pizza) => <Pizza key={pizza.id} pizza={pizza} />)}
       </div>
     </div>
   );
