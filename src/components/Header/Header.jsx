@@ -12,7 +12,7 @@ const Header = ({ isShowButton, cartSum, cartCount }) => (
       <div className={styles.headerLeft}>
         <img width="38px" height="38px" src={PizzaLogo} alt="logo" />
         <div>
-          <h1>react pizza</h1>
+          <h1>pizza-shop</h1>
           <p>самая вкусная пицца во вселенной</p>
         </div>
       </div>

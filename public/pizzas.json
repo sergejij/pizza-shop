@@ -7,6 +7,8 @@
     "countInCart": 2,
     "isTraditional": false,
     "size": 26,
+    "category": 1,
+    "rating": 10,
     "isInCart": false
   },
   {
@@ -17,16 +19,20 @@
     "countInCart": 2,
     "isTraditional": false,
     "size": 26,
+    "category": 2,
+    "rating": 7,
     "isInCart": true
   },
   {
     "id": 3,
     "photo": "/img/pizzas/3.jpg",
-    "headline": "Креветки по-азиатски",
-    "price": 290,
+    "headline": "Цыпленок ранч",
+    "price": 395,
     "countInCart": 2,
     "isTraditional": false,
     "size": 26,
+    "category": 1,
+    "rating": 5,
     "isInCart": true
   },
   {
@@ -37,6 +43,104 @@
     "countInCart": 2,
     "isTraditional": false,
     "size": 26,
+    "category": 1,
+    "rating": 6,
+    "isInCart": false
+  },
+  {
+    "id": 5,
+    "photo": "/img/pizzas/5.jpg",
+    "headline": "Овощи и грибы",
+    "price": 345,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 2,
+    "rating": 9,
+    "isInCart": false
+  },
+  {
+    "id": 6,
+    "photo": "/img/pizzas/6.jpg",
+    "headline": "Пицца-пирог",
+    "price": 315,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 2,
+    "rating": 8,
+    "isInCart": false
+  },
+  {
+    "id": 7,
+    "photo": "/img/pizzas/7.jpg",
+    "headline": "Аррива",
+    "price": 345,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 4,
+    "rating": 7,
+    "isInCart": false
+  },
+  {
+    "id": 8,
+    "photo": "/img/pizzas/8.jpg",
+    "headline": "Мексиканская",
+    "price": 395,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 4,
+    "rating": 10,
+    "isInCart": false
+  },
+  {
+    "id": 9,
+    "photo": "/img/pizzas/9.jpg",
+    "headline": "Нежный лосось",
+    "price": 475,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 3,
+    "rating": 6,
+    "isInCart": false
+  },
+  {
+    "id": 10,
+    "photo": "/img/pizzas/10.jpg",
+    "headline": "Маргарита",
+    "price": 345,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 2,
+    "rating": 7,
+    "isInCart": false
+  },
+  {
+    "id": 11,
+    "photo": "/img/pizzas/11.jpg",
+    "headline": "Четыре сезона",
+    "price": 395,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 5,
+    "rating": 7,
+    "isInCart": false
+  },
+  {
+    "id": 12,
+    "photo": "/img/pizzas/12.jpg",
+    "headline": "Микс",
+    "price": 495,
+    "countInCart": 2,
+    "isTraditional": false,
+    "size": 26,
+    "category": 5,
+    "rating": 8,
     "isInCart": false
   }
 ]

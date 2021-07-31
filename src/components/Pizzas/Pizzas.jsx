@@ -5,14 +5,25 @@ import Pizza from '../Pizza/Pizza';
 
 import styles from './Pizzas.module.scss';
 
-const Pizzas = ({ headline }) => {
+const Pizzas = ({ activeSorting, activeCategory }) => {
+  const { categoryNames } = React.useContext(AppContext);
   const { pizzas } = React.useContext(AppContext);
 
   return (
     <div className={styles.pizzasWrapper}>
-      <h2>{headline}</h2>
+      <h2>{categoryNames[activeCategory]}</h2>
       <div className={styles.pizzas}>
-        {pizzas.length && pizzas.map((pizza) => <Pizza key={pizza.id} pizza={pizza} />)}
+        {pizzas.length && pizzas
+          .filter((pizza) => (activeCategory === 0 ? true : activeCategory === pizza.category))
+          .sort((a, b) => {
+            if (activeSorting === 0) {
+              return a.rating < b.rating ? 1 : -1;
+            } if (activeSorting === 1) {
+              return a.price > b.price ? 1 : -1;
+            }
+            return a.headline > b.headline ? 1 : -1;
+          })
+          .map((pizza) => <Pizza key={pizza.id} pizza={pizza} />)}
       </div>
     </div>
   );

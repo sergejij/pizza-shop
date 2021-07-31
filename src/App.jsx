@@ -12,6 +12,8 @@ import './App.scss';
 function App() {
   const [pizzas, setPizzas] = React.useState([]);
   const [pizzasCart, setPizzasCart] = React.useState([]);
+  const categoryNames = ['Все', 'Мясные', 'Вегетарианские', 'Рыбные', 'Острые', 'Комбинированные'];
+  const sortNames = ['популярности', 'по цене', 'по алфавиту'];
 
   React.useEffect(() => {
     axios.get('http://localhost:3000/pizzas.json')
@@ -26,16 +28,20 @@ function App() {
     <AppContext.Provider value={{
       pizzas,
       pizzasCart,
+      categoryNames,
+      sortNames,
     }}
     >
       <div className="App">
-        <Header isShowButton cartSum={520} cartCount={2} />
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/cart">
-          <Cart pizzas={pizzasCart} />
-        </Route>
+        <div className="content">
+          <Header isShowButton cartSum={520} cartCount={2} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/cart">
+            <Cart pizzas={pizzasCart} />
+          </Route>
+        </div>
       </div>
     </AppContext.Provider>
   );

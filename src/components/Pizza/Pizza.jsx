@@ -39,8 +39,6 @@ const Pizza = ({
   React.useEffect(() => {
     setData(pizza);
   }, []);
-  const [isTraditional, setIsTraditional] = React.useState(false);
-  const [size, setSize] = React.useState(26);
 
   const onChangeIsTraditional = (meaning) => {
     setData((prev) => ({
