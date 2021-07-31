@@ -6,8 +6,7 @@ import Pizza from '../Pizza/Pizza';
 import styles from './Pizzas.module.scss';
 
 const Pizzas = ({ activeSorting, activeCategory }) => {
-  const { categoryNames } = React.useContext(AppContext);
-  const { pizzas } = React.useContext(AppContext);
+  const { categoryNames, addToCart, pizzas } = React.useContext(AppContext);
 
   return (
     <div className={styles.pizzasWrapper}>
@@ -23,7 +22,7 @@ const Pizzas = ({ activeSorting, activeCategory }) => {
             }
             return a.headline > b.headline ? 1 : -1;
           })
-          .map((pizza) => <Pizza key={pizza.id} pizza={pizza} />)}
+          .map((pizza) => <Pizza addToCart={addToCart} key={pizza.id} pizza={pizza} />)}
       </div>
     </div>
   );

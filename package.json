@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "json-server": "^0.16.3",
     "node-sass": "4.14.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -20,7 +21,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint --ext .jsx,.js src",
-    "lint-fix": "./node_modules/.bin/eslint --ext .jsx,.js src --fix"
+    "lint-fix": "./node_modules/.bin/eslint --ext .jsx,.js src --fix",
+    "json-server": "json-server --watch src/pizzas.json --port=3001"
   },
   "eslintConfig": {
     "extends": [
