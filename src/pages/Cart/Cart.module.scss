@@ -56,24 +56,6 @@
     width: 90%;
   }
 
-  .orangeBtn {
-    background-color: #FE5F1E;
-    color: #fff;
-    width: 230px;
-    font-weight: 700;
-    transition: 0.2s ease-in-out;
-    cursor: pointer;
-    padding: 18px 36px;
-
-    &:hover {
-      background-color: #fd6f30;
-    }
-
-    &:active {
-      background-color: #ff7a48;
-    }
-  }
-
   & .grayBtn {
     background-color: transparent;
     color: #D3D3D3;
@@ -81,8 +63,9 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     padding: 18px 30px;
-
     font-weight: 400;
+    height: 55px;
+    margin-bottom: 10px;
 
     border: 1px solid #D3D3D3;
 
@@ -119,12 +102,14 @@
 
   font-size: 1.375rem;
 
+  & > a {
+    text-decoration: none;
+  }
   & > button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
   }
 
   @media (max-width: 750px) {

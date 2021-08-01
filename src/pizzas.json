@@ -5,12 +5,12 @@
       "photo": "/img/pizzas/1.jpg",
       "headline": "Чизбургер-пицца",
       "price": 395,
-      "countInCart": 0,
-      "isTraditional": false,
-      "size": 26,
+      "countInCart": 1,
+      "isTraditional": true,
+      "size": 40,
       "category": 1,
       "rating": 10,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 2,
@@ -55,10 +55,10 @@
       "price": 345,
       "countInCart": 0,
       "isTraditional": false,
-      "size": 26,
+      "size": 40,
       "category": 2,
       "rating": 9,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 6,
@@ -66,11 +66,11 @@
       "headline": "Пицца-пирог",
       "price": 315,
       "countInCart": 0,
-      "isTraditional": false,
-      "size": 26,
+      "isTraditional": true,
+      "size": 40,
       "category": 2,
       "rating": 8,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 7,
@@ -82,19 +82,19 @@
       "size": 26,
       "category": 4,
       "rating": 7,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 8,
       "photo": "/img/pizzas/8.jpg",
       "headline": "Мексиканская",
       "price": 395,
-      "countInCart": 0,
+      "countInCart": 1,
       "isTraditional": false,
       "size": 26,
       "category": 4,
       "rating": 10,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 9,
@@ -106,7 +106,7 @@
       "size": 26,
       "category": 3,
       "rating": 6,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 10,
@@ -118,7 +118,7 @@
       "size": 26,
       "category": 2,
       "rating": 7,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 11,
@@ -127,10 +127,10 @@
       "price": 395,
       "countInCart": 0,
       "isTraditional": false,
-      "size": 26,
+      "size": 40,
       "category": 5,
       "rating": 7,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 12,
@@ -142,32 +142,6 @@
       "size": 26,
       "category": 5,
       "rating": 8,
-      "isInCart": false
-    }
-  ],
-  "pizzasInCart": [
-    {
-      "id": 8,
-      "photo": "/img/pizzas/8.jpg",
-      "headline": "Мексиканская",
-      "price": 395,
-      "countInCart": 12,
-      "isTraditional": false,
-      "size": 26,
-      "category": 4,
-      "rating": 10,
-      "isInCart": true
-    },
-    {
-      "id": 1,
-      "photo": "/img/pizzas/1.jpg",
-      "headline": "Чизбургер-пицца",
-      "price": 395,
-      "countInCart": 4,
-      "isTraditional": false,
-      "size": 26,
-      "category": 1,
-      "rating": 10,
       "isInCart": true
     }
   ]

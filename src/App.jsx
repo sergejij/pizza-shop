@@ -12,7 +12,6 @@ import './App.scss';
 
 function App() {
   const [pizzas, setPizzas] = React.useState([]);
-  const [pizzasInCart, setPizzasInCart] = React.useState([]);
   const categoryNames = ['Все', 'Мясные', 'Вегетарианские', 'Рыбные', 'Острые', 'Комбинированные'];
   const sortNames = ['популярности', 'по цене', 'по алфавиту'];
 
@@ -22,56 +21,60 @@ function App() {
       .catch(() => alert('Произошла ошибка при запросе данных ;('));
   }, []);
 
-  React.useEffect(() => {
-    axios.get(api.pizzasInCart)
-      .then(({ data }) => setPizzasInCart(data))
-      .catch(() => alert('Произошла ошибка при запросе данных ;('));
-  }, []);
-
   const addToCart = (pizza) => {
-    if (pizzasInCart.some((item) => item.id === pizza.id)) {
-      axios.patch(`${api.pizzasInCart}${pizza.id}`, { countInCart: pizza.countInCart })
-        .then(() => {
-          setPizzas((prev) => prev.map((item) => (item.id === pizza.id ? {
-            ...pizza,
-            countInCart: pizza.countInCart,
-          } : item)));
-          setPizzasInCart((prev) => prev.map((item) => (pizza.id === item.id ? {
-            ...pizza,
-            countInCart: pizza.countInCart,
-          } : item)));
-        })
-        .catch(() => alert('Произошла ошибка при добавлении пиццы в корзину ;('));
-    } else {
-      axios.post(api.pizzasInCart, pizza)
-        .then(() => {
-          setPizzas((prev) => prev.map((item) => (item.id === pizza.id ? {
-            ...pizza,
-            countInCart: pizza.countInCart,
-          } : item)));
-          setPizzasInCart((prev) => [...prev, pizza]);
-        })
-        .catch(() => alert('Произошла ошибка при добавлении пиццы в корзину ;('));
+    axios.put(`${api.pizzas}${pizza.id}`, pizza)
+      .then(() => setPizzas((prev) => prev.map((item) => (pizza.id === item.id ? pizza : item))))
+      .catch(() => alert('Произошла ошибка при добавлении пиццы в корзину ;('));
+  };
+
+  const removeCart = async (ids) => {
+    try {
+      ids.forEach((id) => {
+        axios.patch(`${api.pizzas}${id}`, { countInCart: 0 });
+      });
+      setPizzas((prev) => prev.map((pizza) => (ids.includes(pizza.id) ? {
+        ...pizza,
+        countInCart: 0,
+      } : pizza)));
+    } catch {
+      alert('Произошла ошибка при очищении пиццы корзины ;(');
+    }
+  };
+
+  const reducePizzaCount = async (id, newCount) => {
+    try {
+      axios.patch(`${api.pizzas}${id}`, { countInCart: newCount });
+      setPizzas((prev) => prev.map((pizza) => (pizza.id === id ? {
+        ...pizza,
+        countInCart: newCount,
+      } : pizza)));
+    } catch {
+      alert('Произошла ошибка удалении пиццы из корзины ;(');
     }
   };
 
   return (
     <AppContext.Provider value={{
       pizzas,
-      pizzasCart: pizzasInCart,
       categoryNames,
       sortNames,
       addToCart,
+      removeCart,
+      reducePizzaCount,
     }}
     >
       <div className="App">
         <div className="content">
-          <Header isShowButton cartSum={520} cartCount={pizzasInCart.length} />
+          <Header
+            isShowButton
+            cartSum={pizzas.reduce((acc, pizza) => acc + pizza.price * pizza.countInCart, 0)}
+            cartCount={pizzas.reduce((acc, pizza) => acc + pizza.countInCart, 0)}
+          />
           <Route exact path="/">
             <Home />
           </Route>
           <Route path="/cart">
-            <Cart pizzas={pizzasInCart} />
+            <Cart />
           </Route>
         </div>
       </div>

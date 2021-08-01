@@ -4,29 +4,29 @@ import styles from './Pizza.module.scss';
 
 const ConfigurePizza = ({
   isTraditional,
-  onChangeIsTraditional,
+  setIsTraditional,
   size,
-  onChangeSize,
+  setSize,
 }) => (
   <div className={styles.configurePizza}>
     <div className={styles.row}>
       <p
-        onClick={() => onChangeIsTraditional(false)}
+        onClick={() => setIsTraditional(false)}
         className={!isTraditional ? styles.active : ''}
       >
         тонкое
       </p>
       <p
-        onClick={() => onChangeIsTraditional(true)}
+        onClick={() => setIsTraditional(true)}
         className={isTraditional ? styles.active : ''}
       >
         традиционное
       </p>
     </div>
     <div className={styles.row}>
-      <p className={size === 26 ? styles.active : ''} onClick={() => onChangeSize(26)}>26 см.</p>
-      <p className={size === 30 ? styles.active : ''} onClick={() => onChangeSize(30)}>30 см.</p>
-      <p className={size === 40 ? styles.active : ''} onClick={() => onChangeSize(40)}>40 см.</p>
+      <p className={size === 26 ? styles.active : ''} onClick={() => setSize(26)}>26 см.</p>
+      <p className={size === 30 ? styles.active : ''} onClick={() => setSize(30)}>30 см.</p>
+      <p className={size === 40 ? styles.active : ''} onClick={() => setSize(40)}>40 см.</p>
     </div>
   </div>
 );
@@ -35,12 +35,7 @@ const Pizza = ({
   pizza,
   addToCart,
 }) =>
-// const [data, setData] = React.useState({});
 
-// React.useEffect(() => {
-//   setData(pizza);
-// }, []);
-//
 // const onChangeIsTraditional = (meaning) => {
 //   setData((prev) => ({
 //     ...prev,
@@ -67,20 +62,30 @@ const Pizza = ({
 //   });
 // };
 
-  (
+{
+  const [isTraditional, setIsTraditional] = React.useState(false);
+  const [size, setSize] = React.useState(26);
+
+  React.useEffect(() => {
+    setSize(pizza.size);
+    setIsTraditional(pizza.isTraditional);
+  }, []);
+
+  return (
     <div className={styles.pizza}>
       <img width={260} height={260} src={pizza.photo} alt="pizza" />
       <h3>{pizza.headline}</h3>
       <ConfigurePizza
-        isTraditional={pizza.isTraditional}
-        // onChangeIsTraditional={onChangeIsTraditional}
-        size={pizza.size}
+        isTraditional={isTraditional}
+        setIsTraditional={setIsTraditional}
+        size={size}
+        setSize={setSize}
       />
       <div className={styles.row}>
         {pizza.price && (
         <p className={styles.price}>
           от
-            {' '}
+          {' '}
           {pizza.price}
           {' '}
           ₽
@@ -93,6 +98,8 @@ const Pizza = ({
             return addToCart({
               ...pizza,
               countInCart: pizza.countInCart + 1,
+              isTraditional,
+              size,
               isInCart: true,
             });
           }}
@@ -110,4 +117,5 @@ const Pizza = ({
       </div>
     </div>
   );
+};
 export default Pizza;
