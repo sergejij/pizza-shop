@@ -5,8 +5,10 @@ import Pizza from '../Pizza/Pizza';
 
 import styles from './Pizzas.module.scss';
 
-const Pizzas = ({ activeSorting, activeCategory }) => {
-  const { categoryNames, addToCart, pizzas } = React.useContext(AppContext);
+const Pizzas = ({
+  activeSorting, activeCategory, pizzas, categoryNames,
+}) => {
+  const { addToCart } = React.useContext(AppContext);
 
   return (
     <div className={styles.pizzasWrapper}>

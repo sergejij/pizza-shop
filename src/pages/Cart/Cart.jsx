@@ -41,9 +41,9 @@ const PizzaRow = ({
   </div>
 );
 
-const Cart = () => {
+const Cart = ({ pizzas }) => {
   const {
-    pizzas, removeCart, reducePizzaCount, addToCart,
+    removeCart, reducePizzaCount, addToCart,
   } = React.useContext(AppContext);
 
   const pizzasInCart = pizzas.filter((pizza) => pizza.countInCart !== 0);

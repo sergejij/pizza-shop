@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import axios from 'axios';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import AppContext from './context';
 import Home from './pages/Home/Home';
@@ -17,22 +17,22 @@ import {
 
 import './App.scss';
 
-function App({
-  pizzas, addPizzas, addPizzaToCart, removeCartPizzas, reducePizza,
-}) {
-  const categoryNames = ['Все', 'Мясные', 'Вегетарианские', 'Рыбные', 'Острые', 'Комбинированные'];
-  const sortNames = ['популярности', 'по цене', 'по алфавиту'];
+function App() {
+  const dispatch = useDispatch();
+  const { pizzas } = useSelector((state) => ({
+    pizzas: state.pizzas.items,
+  }));
 
   React.useEffect(() => {
     axios.get(api.pizzas)
-      .then(({ data }) => addPizzas(data))
+      .then(({ data }) => dispatch(addPizzas(data)))
       .catch(() => alert('Произошла ошибка при запросе данных ;('));
   }, []);
 
   const addToCart = async (pizza) => {
     try {
       await axios.put(`${api.pizzas}${pizza.id}`, pizza);
-      await addPizzaToCart(pizza);
+      await dispatch(addPizzaToCart(pizza));
     } catch {
       alert('Произошла ошибка при добавлении пиццы в корзину ;(');
     }
@@ -43,7 +43,7 @@ function App({
       ids.forEach((id) => {
         axios.patch(`${api.pizzas}${id}`, { countInCart: 0 });
       });
-      await removeCartPizzas(ids);
+      await dispatch(removeCartPizzas(ids));
     } catch {
       alert('Произошла ошибка при очищении пиццы корзины ;(');
     }
@@ -52,7 +52,7 @@ function App({
   const reducePizzaCount = async (id, newCount) => {
     try {
       await axios.patch(`${api.pizzas}${id}`, { countInCart: newCount });
-      await reducePizza(id, newCount);
+      await dispatch(reducePizza(id, newCount));
     } catch {
       alert('Произошла ошибка удалении пиццы из корзины ;(');
     }
@@ -60,9 +60,6 @@ function App({
 
   return (
     <AppContext.Provider value={{
-      pizzas,
-      categoryNames,
-      sortNames,
       addToCart,
       removeCart,
       reducePizzaCount,
@@ -76,10 +73,10 @@ function App({
             cartCount={pizzas.reduce((acc, pizza) => acc + pizza.countInCart, 0)}
           />
           <Route exact path="/">
-            <Home />
+            <Home pizzas={pizzas} />
           </Route>
           <Route path="/cart">
-            <Cart />
+            <Cart pizzas={pizzas} />
           </Route>
         </div>
       </div>
@@ -87,13 +84,4 @@ function App({
   );
 }
 
-const mapStateToProps = ({ pizzas }) => ({ pizzas: pizzas.items });
-
-const mapDispatchToState = (dispatch) => ({
-  addPizzas: (pizzas) => dispatch(addPizzas(pizzas)),
-  addPizzaToCart: (pizza) => dispatch(addPizzaToCart(pizza)),
-  removeCartPizzas: (ids) => dispatch(removeCartPizzas(ids)),
-  reducePizza: (id, newCount) => dispatch(reducePizza(id, newCount)),
-});
-
-export default connect(mapStateToProps, mapDispatchToState)(App);
+export default App;

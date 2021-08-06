@@ -34,35 +34,7 @@ const ConfigurePizza = ({
 const Pizza = ({
   pizza,
   addToCart,
-}) =>
-
-// const onChangeIsTraditional = (meaning) => {
-//   setData((prev) => ({
-//     ...prev,
-//     isTraditional: meaning,
-//   }));
-// };
-// const onChangeSize = (meaning) => {
-//   setData((prev) => ({
-//     ...prev,
-//     size: meaning,
-//   }));
-// };
-
-// const addToCart = () => {
-//   // setData((prev) => ({
-//   //   ...prev,
-//   //   countInCart: prev.countInCart + 1,
-//   //   isInCart: true
-//   // }));
-//   addToCart({
-//     ...pizza,
-//     countInCart: pizza.countInCart + 1,
-//     isInCart: true,
-//   });
-// };
-
-{
+}) => {
   const [isTraditional, setIsTraditional] = React.useState(false);
   const [size, setSize] = React.useState(26);
 

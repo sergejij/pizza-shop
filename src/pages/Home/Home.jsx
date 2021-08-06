@@ -6,17 +6,28 @@ import Pizzas from '../../components/Pizzas/Pizzas';
 
 import styles from './Home.module.scss';
 
-const Home = () => {
+const categoryNames = ['Все', 'Мясные', 'Вегетарианские', 'Рыбные', 'Острые', 'Комбинированные'];
+
+const Home = ({ pizzas }) => {
   const [activeCategory, setActiveCategory] = React.useState(0);
   const [activeSorting, setActiveSorting] = React.useState(0);
 
   return (
     <main className={styles.home}>
       <div className={styles.tabLine}>
-        <Categories setActiveCategory={setActiveCategory} />
+        <Categories
+          categoryNames={categoryNames}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+        />
         <SortBlock activeSorting={activeSorting} setActiveSorting={setActiveSorting} />
       </div>
-      <Pizzas activeSorting={activeSorting} activeCategory={activeCategory} />
+      <Pizzas
+        categoryNames={categoryNames}
+        pizzas={pizzas}
+        activeSorting={activeSorting}
+        activeCategory={activeCategory}
+      />
     </main>
   );
 };

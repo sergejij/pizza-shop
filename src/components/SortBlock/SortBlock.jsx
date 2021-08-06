@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './SortBlock.module.scss';
-import AppContext from '../../context';
+
+const sortNames = ['популярности', 'по цене', 'по алфавиту'];
 
 const SortBlock = ({ activeSorting, setActiveSorting }) => {
-  const { sortNames } = React.useContext(AppContext);
   const [isOpenPopup, setIsOpenPopup] = React.useState(false);
 
   return (

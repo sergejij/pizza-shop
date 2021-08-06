@@ -1,0 +1,4 @@
+export const ADD_PIZZAS = 'ADD_PIZZAS';
+export const ADD_PIZZA_TO_CART = 'ADD_PIZZA_TO_CART';
+export const REMOVE_CART = 'REMOVE_CART';
+export const REDUCE_PIZZA_COUNT = 'REDUCE_PIZZA_COUNT';
