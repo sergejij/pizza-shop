@@ -5,7 +5,7 @@
       "photo": "/img/pizzas/1.jpg",
       "headline": "Чизбургер-пицца",
       "price": 395,
-      "countInCart": 1,
+      "countInCart": 0,
       "isTraditional": true,
       "size": 40,
       "category": 1,
@@ -46,14 +46,14 @@
       "size": 26,
       "category": 1,
       "rating": 6,
-      "isInCart": false
+      "isInCart": true
     },
     {
       "id": 5,
       "photo": "/img/pizzas/5.jpg",
       "headline": "Овощи и грибы",
       "price": 345,
-      "countInCart": 0,
+      "countInCart": 1,
       "isTraditional": false,
       "size": 40,
       "category": 2,
@@ -89,9 +89,9 @@
       "photo": "/img/pizzas/8.jpg",
       "headline": "Мексиканская",
       "price": 395,
-      "countInCart": 1,
+      "countInCart": 0,
       "isTraditional": false,
-      "size": 26,
+      "size": 40,
       "category": 4,
       "rating": 10,
       "isInCart": true
