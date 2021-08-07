@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import styles from './Cart.module.scss';
 import EmptyCartImg from '../../assets/img/emptyCart.jpg';
-import AppContext from '../../context';
 import PayButton from '../../components/PayButton/PayButton';
 
 const PizzaRow = ({
@@ -41,11 +40,9 @@ const PizzaRow = ({
   </div>
 );
 
-const Cart = ({ pizzas }) => {
-  const {
-    removeCart, reducePizzaCount, addToCart,
-  } = React.useContext(AppContext);
-
+const Cart = ({
+  pizzas, addToCart, reducePizzaCount, removeCart,
+}) => {
   const pizzasInCart = pizzas.filter((pizza) => pizza.countInCart !== 0);
   const ids = pizzasInCart.map((pizza) => pizza.id);
 

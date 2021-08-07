@@ -6,8 +6,8 @@
       "headline": "Чизбургер-пицца",
       "price": 395,
       "countInCart": 0,
-      "isTraditional": true,
-      "size": 40,
+      "isTraditional": false,
+      "size": 26,
       "category": 1,
       "rating": 10,
       "isInCart": true
@@ -55,7 +55,7 @@
       "price": 345,
       "countInCart": 0,
       "isTraditional": false,
-      "size": 40,
+      "size": 26,
       "category": 2,
       "rating": 9,
       "isInCart": true
@@ -66,8 +66,8 @@
       "headline": "Пицца-пирог",
       "price": 315,
       "countInCart": 0,
-      "isTraditional": true,
-      "size": 40,
+      "isTraditional": false,
+      "size": 26,
       "category": 2,
       "rating": 8,
       "isInCart": true
@@ -91,7 +91,7 @@
       "price": 395,
       "countInCart": 0,
       "isTraditional": false,
-      "size": 40,
+      "size": 26,
       "category": 4,
       "rating": 10,
       "isInCart": true
@@ -127,7 +127,7 @@
       "price": 395,
       "countInCart": 0,
       "isTraditional": false,
-      "size": 40,
+      "size": 26,
       "category": 5,
       "rating": 7,
       "isInCart": true

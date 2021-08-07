@@ -8,7 +8,7 @@ import styles from './Home.module.scss';
 
 const categoryNames = ['Все', 'Мясные', 'Вегетарианские', 'Рыбные', 'Острые', 'Комбинированные'];
 
-const Home = ({ pizzas }) => {
+const Home = ({ pizzas, addToCart }) => {
   const [activeCategory, setActiveCategory] = React.useState(0);
   const [activeSorting, setActiveSorting] = React.useState(0);
 
@@ -27,6 +27,7 @@ const Home = ({ pizzas }) => {
         pizzas={pizzas}
         activeSorting={activeSorting}
         activeCategory={activeCategory}
+        addToCart={addToCart}
       />
     </main>
   );
