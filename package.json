@@ -25,7 +25,7 @@
     "lint": "./node_modules/.bin/eslint --ext .jsx,.js src",
     "lint-fix": "./node_modules/.bin/eslint --ext .jsx,.js src --fix",
     "server": "node server.js",
-    "json-server": "json-server --watch src/pizzas.json --port=3001"
+    "json-server": "json-server --watch public/pizzas.json --port=3001"
   },
   "eslintConfig": {
     "extends": [
