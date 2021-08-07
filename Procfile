@@ -1,1 +1,1 @@
-web: node server.jsgit status
+web: node server.js
