@@ -1,5 +1,5 @@
 const api = {
-  pizzas: 'http://localhost:3001/pizzas/',
+  pizzas: '/pizzas/',
 };
 
 export default api;
