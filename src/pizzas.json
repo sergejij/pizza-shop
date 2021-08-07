@@ -138,8 +138,8 @@
       "headline": "Микс",
       "price": 495,
       "countInCart": 0,
-      "isTraditional": false,
-      "size": 26,
+      "isTraditional": true,
+      "size": 40,
       "category": 5,
       "rating": 8,
       "isInCart": true
