@@ -53,7 +53,7 @@
       "photo": "/img/pizzas/5.jpg",
       "headline": "Овощи и грибы",
       "price": 345,
-      "countInCart": 0,
+      "countInCart": 3,
       "isTraditional": false,
       "size": 26,
       "category": 2,
