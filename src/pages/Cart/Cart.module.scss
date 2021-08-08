@@ -185,13 +185,14 @@
 
 .changeCount {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 105px;
 
   & > span {
     font-weight: 700;
     font-size: 1.375rem;
+    margin: 0 10px;
   }
 }
 
@@ -236,6 +237,7 @@
   background: transparent;
   cursor: pointer;
   font-size: 1.8rem;
+  padding: 0;
 
 
   &:hover {
