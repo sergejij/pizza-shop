@@ -206,9 +206,13 @@
   color: #FE5F1E;
   width: 32px;
   height: 32px;
-  font-size: 1.5rem;
   background: transparent;
   cursor: pointer;
+
+  & > svg {
+    width: 10px;
+    height: 10px;
+  }
 
   &:hover {
     background: #FE5F1E;
@@ -234,9 +238,13 @@
   color: #FE5F1E;
   width: 32px;
   height: 32px;
-  font-size: 1.5rem;
   background: transparent;
   cursor: pointer;
+
+  & > svg {
+    width: 10px;
+    height: 10px;
+  }
 
   &:hover {
     background: #D0D0D0;
