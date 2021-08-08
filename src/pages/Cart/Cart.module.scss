@@ -197,7 +197,6 @@
 
 .changeCountBtn {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   transition: 0.2s ease-in-out;
@@ -209,6 +208,11 @@
   height: 32px;
   background: transparent;
   cursor: pointer;
+
+  & > svg {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
 
   &:hover {
     background: #FE5F1E;
